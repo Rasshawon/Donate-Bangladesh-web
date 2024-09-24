@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,27 +31,31 @@
     <title>Donation Bangladesh</title>
   </head>
   <body class="mx-auto lexend-font">
-    <nav id="nav" class="md:sticky sticky top-0 backdrop-blur-lg">
+    <nav id="nav" class="md:sticky sticky top-0 backdrop-blur-lg md:px-6 px-2">
       <div
         class="flex justify-around items-center bg-[#F9F7F3] bg-opacity-70 py-4"
       >
         <button
           id="toggle-btn"
           onclick="togglePage()"
-          class="bg-[#B4F461] md:text-xl font-semibold py-2 md:px-6 px-4 rounded-lg"
+          class="bg-[#B4F461] md:text-xl text-sm font-semibold py-2 md:px-6 px-4 rounded-lg"
         >
           <a href="./Blog.html">Blog</a>
         </button>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center md:gap-2 gap-1">
           <img
-            class="md:size-fit size-8"
+            class="md:size-fit size-6"
             src="./Assest/logo.png"
             alt="donate"
           />
           <h1 class="font-bold md:text-xl text-sm">Donate Bangladesh</h1>
         </div>
         <div class="flex items-center md:gap-2 gap-1">
-          <img src="./Assest/coin.png" alt="dollar" />
+          <img
+            class="md:size-fit size-4"
+            src="./Assest/coin.png"
+            alt="dollar"
+          />
           <p
             id="remaining-balance"
             class="text-[#111111] md:text-lg text-sm font-semibold"
