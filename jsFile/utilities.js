@@ -5,6 +5,7 @@ function getInputValueById(id) {
   const inputNumber = parseFloat(inputValue);
   if (inputNumber.toString() !== inputValue) {
     alert("invalid input");
+    return;
   } else {
     return inputNumber;
   }
@@ -40,6 +41,7 @@ function getDonation(buttonId, amountInputId, totalDonationId, titleId) {
     const donationAmount = getInputValueById(amountInputId);
     if (isNaN(donationAmount) || donationAmount <= 0) {
       alert("Invalid Input");
+      document.getElementById(amountInputId).value = "";
       return;
     }
 
@@ -60,15 +62,15 @@ function getDonation(buttonId, amountInputId, totalDonationId, titleId) {
     getModals();
 
     const div = document.createElement("div");
-    div.classList.add("border-2", "m-4", "rounded-lg");
+    div.classList.add("border-2", "mt-2", "rounded-lg");
     div.innerHTML = `
-            <div class="px-10 py-4 mb-4">
-                <h4 class="text-2xl font-bold text-gray-600">${donationAmount.toFixed(
+            <div class="px-10 py-4 mb-2">
+                <h4 class="md:text-xl text-lg font-bold text-gray-600">${donationAmount.toFixed(
                   2
                 )} Taka is Donated for ${
       document.getElementById(titleId).innerText
     }</h4>
-                <p class="text-lg text-gray-500 font-semibold mt-2 mb-2 bg-gray-100">Date: ${new Date().toString()}</p>
+                <p class="md:text-base text-sm text-gray-500 font-semibold my-2 md:px-1 bg-gray-100">Date: ${new Date().toString()}</p>
             </div>
         `;
     document.getElementById("history-section").appendChild(div);
@@ -110,8 +112,8 @@ function showSectionById(id) {
 function togglePage() {
   const button = document.getElementById("toggle-btn");
   if (button.innerText === "Home") {
-    document.location.href = "index.html";
+    document.location.href = "/index.html";
   } else {
-    document.location.href = "blog.html";
+    document.location.href = "/Blog.html";
   }
 }
