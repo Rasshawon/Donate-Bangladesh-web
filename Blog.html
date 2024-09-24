@@ -29,5 +29,39 @@
     </style>
     <title>Donation Bangladesh</title>
   </head>
-  <body></body>
+  <body class="mx-auto lexend-font">
+    <nav id="nav" class="md:sticky sticky top-0 backdrop-blur-lg">
+      <div
+        class="flex justify-around items-center bg-[#F9F7F3] bg-opacity-70 py-4"
+      >
+        <button
+          onclick="togglePage()"
+          id="toggle-btn"
+          class="bg-[#B4F461] md:text-xl font-semibold py-2 md:px-6 px-4 rounded-lg"
+        >
+          Home
+        </button>
+        <div class="flex items-center md:gap-2">
+          <img
+            class="md:size-fit size-8"
+            src="./Assest/logo.png"
+            alt="donate"
+          />
+          <h1 class="font-bold md:text-xl text-sm">Donate Bangladesh</h1>
+        </div>
+        <div class="flex items-center gap-2">
+          <img src="./Assest/coin.png" alt="dollar" />
+          <p
+            id="blog-remaining-balance"
+            class="text-[#111111] md:text-lg text-sm font-semibold"
+          >
+            20000
+          </p>
+          <span class="text-gray-700 md:text-lg text-sm md:font-semibold"
+            >BDT</span
+          >
+        </div>
+      </div>
+    </nav>
+  </body>
 </html>
