@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      .lexend-font {
+        font-family: "Lexend", system-ui;
+      }
+    </style>
+    <title>Donation Bangladesh</title>
+  </head>
+  <body>
+    <!--nav start-->
+    <nav id="nav" class="md:sticky sticky top-0 backdrop-blur-lg">
+      <div
+        class="flex justify-around items-center bg-[#F9F7F3] bg-opacity-70 py-4"
+      >
+        <button
+          id="toggle-btn"
+          onclick="togglePage()"
+          class="bg-[#B4F461] md:text-xl font-semibold py-2 md:px-6 px-4 rounded-lg"
+        >
+          Blog
+        </button>
+        <div class="flex items-center gap-2">
+          <img
+            class="md:size-fit size-8"
+            src="./Assest/logo.png"
+            alt="donate"
+          />
+          <h1 class="font-bold md:text-xl text-sm">Donate Bangladesh</h1>
+        </div>
+        <div class="flex items-center md:gap-2 gap-1">
+          <img src="./Assest/coin.png" alt="dollar" />
+          <p
+            id="remaining-balance"
+            class="text-[#111111] md:text-lg text-sm font-semibold"
+          >
+            20000
+          </p>
+          <span class="text-gray-700 md:text-lg text-sm md:font-semibold"
+            >BDT</span
+          >
+        </div>
+      </div>
+
+      <div
+        id="btn-section"
+        class="flex pt-6 pb-6 mx-auto items-center justify-center gap-4"
+      >
+        <button
+          id="btn-donation"
+          class="bg-[#B4F461] text-gray-700 font-bold py-2 px-6 rounded-lg"
+        >
+          Donation
+        </button>
+
+        <button
+          id="btn-history"
+          class="border-2 border-gray-300 text-gray-700 font-bold py-2 px-6 rounded-lg"
+        >
+          History
+        </button>
+      </div>
+    </nav>
+    <!--nav end-->
+    <main>
+      <div id="main-section" class="md:px-32 md:py-16 px-6 py-4">
+        <div id="donation-section">
+          <!--Noakhali section-->
+          <div class="lg:flex mb-8 border-2 p-4 border-gray-300 rounded-lg">
+            <div class="card-img py-3">
+              <img src="./Assest/noakhali.png" alt="" />
+            </div>
+            <div class="flex-1 py-2 md:px-6 px-2 card-details">
+              <button
+                class="flex mb-4 px-2 py-2 rounded-md items-center bg-gray-100"
+              >
+                <img src="./Assest/coin.png" alt="" />
+                <p
+                  id="total-donation-for-noakhali"
+                  class="mr-1 ml-2 text-gray-700 text-lg font-semibold"
+                >
+                  5000
+                </p>
+                <span class="text-gray-700 text-lg font-semibold">BDT</span>
+              </button>
+              <h2
+                id="noakhali-title"
+                class="font-bold mb-2 md:text-2xl text-xl"
+              >
+                Donate for Flood at Noakhali, Bangladesh
+              </h2>
+              <p class="text-gray-600 md:text-lg mb-2 w-[90%]">
+                The recent floods in Noakhali have caused significant damage to
+                homes infrastructure. Your donation will help provide essential
+                supplies and to those affected by this disaster. Every
+                contribution, big or small, makes difference. Please join us in
+                supporting the relief efforts and making a positive impact on
+                the lives of those in need.
+              </p>
+
+              <input
+                id="donation-amount-for-noakhali"
+                class="w-full mb-2 py-2 px-4 rounded-lg md:text-lg border-2 border-gray-300 outline-none"
+                type="text"
+                placeholder="Write Donation Amount"
+              />
+              <button
+                id="btn-donation-for-noakhali"
+                class="w-full bg-[#B4F461] md:text-xl font-semibold mt-2 py-3 px-4 rounded-lg"
+              >
+                Donate Now
+              </button>
+
+              <!-- Modal -->
+              <div
+                id="myModal"
+                class="flex fixed inset-0 items-center justify-center hidden bg-black bg-opacity-50"
+              >
+                <div
+                  class="flex flex-col items-center justify-centers bg-white rounded-lg shadow-lg p-6 w-96"
+                >
+                  <h2 class="text-4xl font-bold text-black mt-4">Congrats!</h2>
+                  <img
+                    class="flex mt-2 mb-4 justify-center items-center"
+                    src="./Assest/coin.png"
+                    alt=""
+                  />
+                  <p class="mt-2 font-semibold">
+                    You Have Donated for Humankind
+                  </p>
+                  <h3 class="text-lg text-gray-800 font-bold mt-2 mb-4">
+                    Successfully
+                  </h3>
+                  <button
+                    id="closeModal"
+                    class="close mt-4 px-4 py-2 bg-gray-200 text-gray-700 rounded"
+                  >
+                    Close confirmation
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
