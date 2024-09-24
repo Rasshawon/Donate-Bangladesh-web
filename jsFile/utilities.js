@@ -107,28 +107,11 @@ function showSectionById(id) {
   }
 }
 
-// function getSwitchPage(id) {
-//   const btnText = document.getElementById("switch-page").innerText;
-//   if (btnText == "Blog") {
-//     document.getElementById("switch-page").innerText = "Home";
-//     document.getElementById("donation-section").classList.add("hidden");
-//     document.getElementById("history-section").classList.add("hidden");
-//     document.getElementById("home-section").classList.remove("hidden");
-//     document.getElementById("btn-section").classList.add("hidden");
-//   } else {
-//     document.getElementById("switch-page").innerText = "Blog";
-//     document.getElementById("donation-section").classList.remove("hidden");
-//     document.getElementById("btn-section").classList.remove("hidden");
-//   }
-// }
-
 function togglePage() {
   const button = document.getElementById("toggle-btn");
   if (button.innerText === "Home") {
-    // Redirect back to index.html
     document.location.href = "index.html";
   } else {
-    // Redirect to blog.html (this should not happen here)
     document.location.href = "blog.html";
   }
 }
